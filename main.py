@@ -26,7 +26,7 @@ grid = Grid([
 [Cell('anger'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('fear'), Cell('joy'), Cell('disgust'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('anger'), Cell('joy'), Cell('fear'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('disgust'), Cell('joy'), Cell('anger'), Cell('joy')],
 [Cell('joy'), Cell('disgust'), Cell('joy'), Cell('anger'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('fear'), Cell('joy'), Cell('disgust'), Cell('joy'), Cell('anger'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('fear'), Cell('joy'), Cell('disgust'), Cell('joy'), Cell('anger')],
 [Cell('sad'), Cell('joy'), Cell('fear'), Cell('joy'), Cell('disgust'), Cell('joy'), Cell('anger'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('fear'), Cell('joy'), Cell('disgust'), Cell('joy'), Cell('anger'), Cell('joy'), Cell('sad'), Cell('joy'), Cell('fear'), Cell('joy')]
-])
+]) #giant grid
 
 
 imageMap = {
@@ -34,7 +34,7 @@ imageMap = {
         "sad": pygame.image.load("sadness.png"),
         "disgust": pygame.image.load("disgust.png"),
         "fear": pygame.image.load("fear.png"),
-        "anger": pygame.image.load("anger.png")
+        "anger": pygame.image.load("anger.png") #similar to p5 js but good to show all on grid
     }
 
 for key in imageMap:
@@ -112,7 +112,7 @@ while running:
         counts.get("anger", 0) * 1.7 +
         counts.get("fear", 0) * 1.2 +
         counts.get("disgust", 0) * 0.7
-    ) / total
+    ) 
 
     energy = max(0, energy)
     
