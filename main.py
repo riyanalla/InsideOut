@@ -127,7 +127,7 @@ while running:
         for c in range(len(grid.cells[r])):
             state = grid.cells[r][c].state
             img = imageMap[state]
-            screen.blit(img, (c*50, r*50 + 100))
+            screen.blit(img, (c*50, r*50 + 100)) #display all together
 
     pygame.display.flip()
     clock.tick(50)
