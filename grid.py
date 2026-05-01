@@ -12,7 +12,7 @@ class Grid:
         for r in range(len(cells)):
             newRow = []
             for c in range(len(cells[r])):
-                newRow.append(Cell(cells[r][c].state))
+                newRow.append(Cell(cells[r][c].state)) #instantiating new array for every time refreshes
             newCellsArray.append(newRow)
         for r in range(len(cells)):
             for c in range(len(cells[r])):
@@ -41,12 +41,12 @@ class Grid:
                 for n in neighbors:
                     if n.state == "sad":
                         sadneighbors+=1
-                if sadneighbors >= 3 and cells[r][c].state == "sad":
+                if sadneighbors >= 3 and cells[r][c].state == "sad": #sad clusters
                     if random.random() < 0.4:
                         newCellsArray[r][c].state = "sad"
                 elif majority == "joy":
                     if random.random() < 0.03:
-                        newCellsArray[r][c].state = "sad"
+                        newCellsArray[r][c].state = "sad" #random flip from joy to sadness (reflecting real life)
                 elif random.random() < 0.1:
                         newCellsArray[r][c].state = majority
         return newCellsArray
@@ -95,10 +95,10 @@ class Grid:
                 for neighbor in neighbors:
                     counts[neighbor.state] = counts.get(neighbor.state, 0) + 1
                 if counts:
-                    state = random.choices(list(counts.keys()), weights = list(counts.values()))[0]
+                    state = random.choices(list(counts.keys()), weights = list(counts.values()))[0] #same logic as in phase 3
                 else:
                     state = cells[r][c].state
                 if random.random() < 0.1:
-                    state = random.choice(emotions)
+                    state = random.choice(emotions) #randomness for sadness and joy to be include
                 newCellsArray[r][c].state = state
         return newCellsArray
