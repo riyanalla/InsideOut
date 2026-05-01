@@ -41,7 +41,7 @@ for key in imageMap:
     imageMap[key] = pygame.transform.scale(imageMap[key], (50, 50))
 
 
-energy = 50
+energy = 50 #good threshold
 running = True
 
 emotionStrengths = {"joy": 0.7, "sad": 0.5, "anger": 0.4, "fear": 0.3, "disgust": 0.3}
